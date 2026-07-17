@@ -4,16 +4,18 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && apt install -y \
     xfce4 \
+    xfce4-session \
     xfce4-terminal \
+    xfwm4 \
+    dbus \
+    dbus-x11 \
+    xauth \
     x11vnc \
     xvfb \
     novnc \
     websockify \
     supervisor \
-    dbus-x11 \
     firefox-esr \
-    wget \
-    curl \
     && apt clean
 
 RUN mkdir -p /root/.vnc
