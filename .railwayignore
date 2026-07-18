@@ -1,0 +1,5 @@
+# Railway ignore — exclude files that don't need to be in the build context
+.git
+.gitignore
+*.md
+README*
