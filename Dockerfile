@@ -57,10 +57,8 @@ RUN useradd -m -s /bin/bash -G sudo kali 2>/dev/null || true && \
     echo "kali:kali" | chpasswd && \
     echo "kali ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-# ── Configure VNC password ───────────────────────────────────
+# ── Create VNC config dir (password set at runtime by start.sh) ──
 RUN mkdir -p /home/kali/.vnc && \
-    printf '%s\n%s\n\n' "kalilinux" "kalilinux" | vncpasswd /home/kali/.vnc/passwd && \
-    chmod 600 /home/kali/.vnc/passwd && \
     chown -R kali:kali /home/kali/.vnc
 
 # ── XFCE startup script for VNC ─────────────────────────────
